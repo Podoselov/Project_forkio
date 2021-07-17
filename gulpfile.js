@@ -11,6 +11,7 @@ const del = require('del');
 const uglify = require('gulp-uglify');
 const ttfToWoff2 = require('gulp-ttf2woff2');
 const ttfToWoff = require('gulp-ttf2woff');
+const rename = require('gulp-rename');
 
 function serv() {
   browserSync.init({
@@ -40,18 +41,21 @@ function stylesDev() {
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(
-      autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true })
+      autoprefixer({ overrideBrowserslist: ['last 3 versions'], grid: true })
     )
-    .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(cleanCSS({ level: { 1: { specialComments: 0 } } }))
     .pipe(sourcemaps.write())
+    .pipe(rename({ basename: 'styles', suffix: '.min', extname: '.css' }))
     .pipe(dest('./dist/css/'))
     .pipe(browserSync.reload({ stream: true }));
 }
 
 function scriptsDev() {
   return src('./src/js/*.js')
+    .pipe(sourcemaps.init())
     .pipe(concat('scripts.min.js'))
     .pipe(uglify())
+    .pipe(sourcemaps.write())
     .pipe(dest('./dist/js'))
     .pipe(browserSync.reload({ stream: true }));
 }
@@ -66,10 +70,10 @@ function stylesBuild() {
   return src('./src/scss/main.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(
-      autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true })
+      autoprefixer({ overrideBrowserslist: ['last 3 versions'], grid: true })
     )
-    .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(concat('styles.min.css'))
+    .pipe(cleanCSS({ level: { 1: { specialComments: 0 } } }))
+    .pipe(rename({ basename: 'styles', suffix: '.min', extname: '.css' }))
     .pipe(dest('./dist/css/'));
 }
 
@@ -101,20 +105,7 @@ function fonts() {
     .pipe(dest('./dist/fonts/'));
 }
 
-exports.imagesBuild = imagesBuild;
-exports.stylesBuild = stylesBuild;
-exports.scriptsBuild = scriptsBuild;
-exports.fonts = fonts;
-
 exports.build = series(delDist, fonts, imagesBuild, stylesBuild, scriptsBuild);
-
-exports.delDist = delDist;
-exports.html = html;
-exports.serv = serv;
-exports.watcher = watcher;
-exports.scriptsDev = scriptsDev;
-exports.stylesDev = stylesDev;
-exports.imagesDev = imagesDev;
 exports.dev = parallel(
   serv,
   watcher,
