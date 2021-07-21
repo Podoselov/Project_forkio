@@ -16,7 +16,7 @@ const rename = require("gulp-rename");
 function serv() {
   browserSync.init({
     server: {
-      baseDir: "./",
+      baseDir: "./dist",
     },
   });
 }
@@ -84,7 +84,7 @@ function scriptsBuild() {
 }
 
 function watcher() {
-  watch("*.html").on("change", browserSync.reload);
+  watch("./src/html/*.html").on("change", parallel(html));
   watch("./src/js/*.js").on("change", parallel(scriptsDev));
   watch("./src/scss/*.scss").on("change", parallel(stylesDev));
   watch("./src/img/**/*.{jpg,jpeg,png,gif,tif,svg").on(
