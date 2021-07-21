@@ -18,7 +18,7 @@ function serv() {
     server: {
       baseDir: './',
     },
-    browser: 'firefox',
+    browser: ['firefox', 'google chrome', 'opera'],
   });
 }
 
@@ -85,7 +85,7 @@ function scriptsBuild() {
 }
 
 function watcher() {
-  watch('*.html').on('change', browserSync.reload);
+  watch('./src/html/*.html').on('change', parallel(html));
   watch('./src/js/*.js').on('change', parallel(scriptsDev));
   watch('./src/scss/*.scss').on('change', parallel(stylesDev));
   watch('./src/img/**/*.{jpg,jpeg,png,gif,tif,svg').on(
@@ -105,7 +105,14 @@ function fonts() {
     .pipe(dest('./dist/fonts/'));
 }
 
-exports.build = series(delDist, fonts, imagesBuild, stylesBuild, scriptsBuild);
+exports.build = series(
+  delDist,
+  html,
+  fonts,
+  imagesBuild,
+  stylesBuild,
+  scriptsBuild
+);
 exports.dev = parallel(
   serv,
   watcher,

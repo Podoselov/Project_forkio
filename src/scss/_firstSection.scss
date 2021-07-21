@@ -1,0 +1,299 @@
+.about-us__wraper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 1);
+}
+.about-us__container {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 906px;
+  margin-bottom: 70px;
+  @media (max-width: 768px) {
+    margin-bottom: 98px;
+  }
+  @media (max-width: 490px) {
+    max-width: 273px;
+    margin: 0 auto;
+    margin-bottom: 120px;
+  }
+}
+.about-us__discount {
+  margin-top: 48px;
+  margin-bottom: 66px;
+  color: rgba(132, 142, 151, 1);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 15px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  @media (max-width: 768px) {
+    line-height: 16px;
+    margin-bottom: 94px;
+  }
+  @media (max-width: 490px) {
+    line-height: 14px;
+    margin-bottom: 72px;
+    margin-top: 36px;
+  }
+}
+.about-us__heading {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 54px;
+  line-height: 54px;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(99, 92, 115, 1);
+  margin-bottom: 35px;
+  @media (max-width: 768px) {
+    font-size: 42px;
+    line-height: 42px;
+    margin-bottom: 33px;
+  }
+  @media (max-width: 490px) {
+    font-size: 26px;
+    line-height: 28px;
+    margin-bottom: 27px;
+  }
+}
+.about-us__text {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 32px;
+  text-align: center;
+  color: rgba(50, 50, 50, 1);
+  margin-bottom: 13px;
+  @media (max-width: 768px) {
+    margin-bottom: 24px;
+  }
+  @media (max-width: 490px) {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 36px;
+  }
+}
+.about-us__counter {
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 490px) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.counter__item {
+  margin-right: 10px;
+  @media (max-width: 490px) {
+    margin-right: 0px;
+    margin-bottom: 5px;
+    &:last-child {
+      margin: 0 auto;
+    }
+  }
+}
+.counter__link {
+  border: 1px solid;
+  border-radius: 6px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-color: rgba(27, 31, 35, 0.15);
+  display: inline-block;
+  background-color: #fafbfc;
+  padding: 3px 12px;
+  text-decoration: none;
+}
+
+.counter__link-text {
+  color: #24292e;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  padding-right: 5px;
+  &::after {
+    border-bottom: 0 solid transparent;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top-style: solid;
+    border-top-width: 4px;
+    content: '';
+    display: inline-block;
+    height: 0;
+    vertical-align: middle;
+    width: 0;
+    margin-left: 4px;
+    @media (max-width: 490px) {
+      display: none;
+    }
+  }
+}
+.counter__link-svg {
+  vertical-align: middle;
+}
+.counter__number {
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid rgb(27, 31, 35, 15%);
+  border-bottom-right-radius: 6px;
+  border-left: 0;
+  border-top-right-radius: 6px;
+  box-shadow: rgb(27, 31, 35, 0.04), rgba(255, 255, 255, 0.25);
+  color: #24292e;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 3px 12px;
+  text-decoration: none;
+}
+.price__wraper {
+  background-color: rgba(244, 244, 244, 1);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  @media (max-width: 1100px) {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  @media (max-width: 400px) {
+    position: relative;
+  }
+}
+.price__container {
+  width: 100%;
+  padding-left: 90px;
+  padding-top: 100px;
+  display: flex;
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    position: relative;
+    padding-left: 30px;
+  }
+  @media (max-width: 740px) {
+    margin: 0 auto;
+    padding-left: 0;
+  }
+  @media (max-width: 400px) {
+    max-width: 273px;
+    margin: 0 auto;
+    position: static;
+  }
+}
+.price__list {
+  margin-right: 54px;
+  @media (max-width: 1100px) {
+    margin: 0 auto;
+  }
+  @media (max-width: 740px) {
+    margin-left: 30px;
+  }
+  @media (max-width: 400px) {
+    margin: 0;
+  }
+}
+.price__item {
+  margin-bottom: 33px;
+  display: flex;
+  max-width: 540px;
+  @media (max-width: 1100px) {
+    max-width: 732px;
+    margin-bottom: 29px;
+    &:first-child {
+      margin-top: 50px;
+    }
+  }
+  @media (max-width: 400px) {
+    display: block;
+    margin-bottom: 34px;
+    &:first-child {
+      margin-top: 80px;
+    }
+    &:last-child {
+      margin-bottom: 64px;
+    }
+  }
+}
+.price__description {
+  margin-left: 23px;
+  @media (max-width: 400px) {
+    margin-left: 0px;
+  }
+}
+.price__heading {
+  color: rgba(50, 50, 50, 1);
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  margin-bottom: 17px;
+  @media (max-width: 400px) {
+    line-height: 16px;
+    text-align: center;
+    line-height: 16px;
+  }
+}
+.price__text {
+  color: rgba(132, 142, 151, 1);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  font-family: Montserrat;
+}
+.price__icon {
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.price__icon-wraper {
+  flex: 0 0 111px;
+  min-height: 111px;
+  position: relative;
+}
+.price__name {
+  color: rgba(141, 129, 172, 1);
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 50px;
+  margin-bottom: 10px;
+  padding-left: 22px;
+  @media (max-width: 1100px) {
+    position: absolute;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-top: 62px;
+    padding-left: 0;
+  }
+  @media (max-width: 740px) {
+    font-size: 32px;
+    line-height: 38px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-left: 0;
+  }
+  @media (max-width: 400px) {
+    max-width: 230px;
+  }
+}
+.price__logo img {
+  max-width: 100%;
+  @media (max-width: 1100px) {
+    position: absolute;
+    right: 0;
+  }
+}
