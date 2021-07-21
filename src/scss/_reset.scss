@@ -86,11 +86,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -120,7 +115,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
