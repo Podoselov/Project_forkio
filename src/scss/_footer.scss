@@ -10,6 +10,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   font-family: Montserrat;
+  @media (max-width: 320px) {
+    min-width: 320px;
+  }
 }
 .footer__container {
   margin: 0 auto;
