@@ -15,7 +15,7 @@
   @media (max-width: 992px) {
     margin-bottom: 98px;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 479px) {
     max-width: 300px;
     margin: 0 auto;
     margin-bottom: 120px;
@@ -44,7 +44,7 @@
     margin-bottom: 33px;
     margin-top: 88px;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 479px) {
     font-size: 26px;
     line-height: 28px;
     margin-bottom: 27px;
@@ -62,19 +62,27 @@
   @media (max-width: 992px) {
     margin-bottom: 24px;
   }
+  @media (max-width: 479px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 .about-us__counter {
   display: flex;
   justify-content: center;
 
-  @media (max-width: 484px) {
+  @media (max-width: 479px) {
     flex-wrap: wrap;
+    justify-content: space-around;
   }
 }
 .counter__item {
-  margin-right: 10px;
-  @media (max-width: 484px) {
-    margin-bottom: 15px;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+  @media (max-width: 479px) {
+    margin-right: 0;
+    margin-bottom: 20px;
     &:last-child {
       margin: 0 auto;
     }
@@ -92,7 +100,7 @@
   text-decoration: none;
 }
 
-.counter__link-text {
+.counter__text {
   color: #24292e;
   font-weight: 600;
   font-size: 12px;
@@ -109,13 +117,13 @@
     height: 0;
     vertical-align: middle;
     width: 0;
-    margin-left: 4px;
-    @media (max-width: 480px) {
+    margin-left: 2px;
+    @media (max-width: 479px) {
       display: none;
     }
   }
 }
-.counter__link-svg {
+.counter__svg {
   vertical-align: middle;
 }
 .counter__number {
@@ -139,7 +147,7 @@
   margin: 0;
   padding: 0;
   position: relative;
-  @media (max-width: 1138px) {
+  @media (max-width: 992px) {
     background-color: rgba(0, 0, 0, 0);
   }
   @media (max-width: 320px) {
@@ -152,13 +160,13 @@
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
-  @media (max-width: 1138px) {
+  @media (max-width: 992px) {
     flex-direction: column;
   }
   @media (max-width: 740px) {
     margin: 0 auto;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 479px) {
     max-width: 300px;
     margin: 0 auto;
   }
@@ -171,13 +179,14 @@
 }
 .price__list {
   margin: 100px 0 69px;
-  @media (max-width: 1138px) {
+  @media (max-width: 992px) {
     margin: 180px 0 69px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 479px) {
+    margin-top: 85px;
     margin-bottom: 99px;
   }
 }
@@ -185,11 +194,11 @@
   margin-bottom: 33px;
   display: flex;
   max-width: 540px;
-  @media (max-width: 1138px) {
+  @media (max-width: 992px) {
     max-width: 732px;
     margin-bottom: 29px;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 479px) {
     display: block;
     margin-bottom: 34px;
     &:first-child {
@@ -202,7 +211,7 @@
 }
 .price__description {
   margin-left: 23px;
-  @media (max-width: 400px) {
+  @media (max-width: 479px) {
     margin-left: 0px;
   }
 }
@@ -214,7 +223,7 @@
   font-size: 16px;
   line-height: 21px;
   margin-bottom: 17px;
-  @media (max-width: 400px) {
+  @media (max-width: 479px) {
     line-height: 16px;
     text-align: center;
     line-height: 16px;
@@ -227,16 +236,25 @@
   font-size: 14px;
   line-height: 21px;
   font-family: Montserrat;
+  @media (max-width: 479px) {
+    text-align: center;
+  }
 }
-.price__icon {
+.price__img {
   max-width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  margin: auto;
+  margin: 0 auto;
+  &--position {
+    margin-left: 15px;
+    @media (max-width: 479px) {
+      margin-left: 110px;
+    }
+  }
 }
-.price__icon-wraper {
+.price__icon {
   flex: 0 0 111px;
   min-height: 111px;
   position: relative;
@@ -250,7 +268,8 @@
   line-height: 50px;
   margin-bottom: 50px;
   margin-top: 100px;
-  @media (max-width: 1138px) {
+
+  @media (max-width: 992px) {
     position: absolute;
     top: 0;
     margin-left: auto;
@@ -260,6 +279,8 @@
     text-align: center;
     margin-top: 62px;
     padding-left: 0;
+    font-size: 42px;
+    line-height: 44px;
   }
   @media (max-width: 740px) {
     font-size: 32px;
@@ -271,7 +292,7 @@
     text-align: center;
     padding-left: 0;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 479px) {
     max-width: 230px;
   }
 }
@@ -284,7 +305,7 @@
   right: 0;
   max-width: 50%;
   height: auto;
-  @media (max-width: 1138px) {
+  @media (max-width: 992px) {
     max-width: 80%;
     bottom: 20px;
   }
