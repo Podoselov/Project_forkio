@@ -333,12 +333,14 @@
   bottom: -60px;
   left: 50%;
   transform: translate(-50%, -50%);
+  border: 2px solid #8d81ac;
   &:hover {
     color: #8d81ac;
     background: #ffffff;
     border: 2px solid #8d81ac;
   }
   @media (max-width: 480px) {
+    bottom: -50px;
     width: 290px;
     height: 45px;
     font-size: 18px;
