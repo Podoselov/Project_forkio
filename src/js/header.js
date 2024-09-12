@@ -5,11 +5,11 @@ function menuToggle(event) {
   if (event.target.closest(".navbar__burger")) {
     openBurger.style.display = "none";
     closeBurger.style.display = "block";
-    menu.style.display = "block";
+    menu.classList.add("menu__adaptive");
   } else if (event.target === closeBurger) {
     openBurger.style.display = "block";
     closeBurger.style.display = "none";
-    menu.style.display = "none";
+    menu.classList.remove("menu__adaptive");
   }
 }
 openBurger.addEventListener("click", menuToggle);
